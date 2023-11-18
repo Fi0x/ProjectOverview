@@ -4,7 +4,6 @@ html {
     height: 100%;
     overflow: hidden;
 }
-/*TODO: Gradients verwenden statt plain color*/
 body {
     margin: 0;
     padding: 0;
@@ -20,19 +19,8 @@ body {
     scroll-behavior: smooth;
     background: #000000;
 }
-
 body::-webkit-scrollbar {
     display: none;
-}
-
-h1 {
-    font-size: 250%
-}
-
-p {
-    font-size: 140%;
-    line-height: 150%;
-    color: #e0e0e0;
 }
 
 .slide {
@@ -43,75 +31,76 @@ p {
     box-sizing: border-box;
     transform-style: inherit;
     scroll-snap-align: center;
+    background: 50% 50% / cover;
 }
-
-.projectImg {
-    position: absolute;
-    top: 50%;
-    left: 35%;
-    transform: translateZ(.4px) scale(.7) translateX(-100%) translateY(-130%);
-    padding: 4px;
-    border-radius: 5px;
-    background: #ffffffbb;
-    box-shadow: 0 0 8px #000000AA;
+.slide:first-of-type {
+    background: linear-gradient(135deg, #202020 0%, #000000 100%);
 }
-
-.projectImg:last-of-type {
-    transform: translateZ(.4px) scale(.7) translateX(-100%) translateY(-15%);
+.contentSlide {
+    background: linear-gradient(135deg, #282828 0%, #080808 100%);
 }
-
-.slide:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.slide:last-of-type {
+    background: linear-gradient(135deg, #404040 0%, #202020 100%);
 }
 
 .title {
     width: 50%;
-    padding: 5%;
+    max-height: 150%;
+    padding: 3%;
     border-radius: 10px;
-    background: #404040FF;
+    background: linear-gradient(135deg, #505050 100%, #707070 0%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    margin-left: auto;
-    margin-right: 0;
+    margin: -5% 0 10% auto;
 }
-
-.slide, .slide:before {
-    background: 50% 50% / cover;
-}
-
 .header {
     text-align: center;
     font-size: 175%;
     color: #ffffff;
 }
 
-.slide:first-of-type {
-    background: linear-gradient(135deg, #202020 0%, #000000 100%);
-    z-index: 2;
+.projectImg {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    width: 25%;
+    height: 35%;
+    transform: translateX(-100%) translateY(-110%);
+    padding: 4px;
+    border-radius: 5px;
+    background: #ffffffbb;
+    box-shadow: 0 0 8px #000000AA;
 }
-#slide1:before {
-    background: linear-gradient(135deg, #282828 0%, #080808 100%);
-    transform: translateZ(-1px) scale(2);
+.projectImg:last-of-type {
+    transform: translateX(-100%) translateY(10%);
 }
-#slide2 {
-    background: linear-gradient(135deg, #282828 0%, #080808 100%);
-    z-index: 2;
+
+h1 {
+    font-size: 250%;
 }
-#slide3:before {
-    background: linear-gradient(135deg, #282828 0%, #080808 100%);
-    transform: translateZ(-1px) scale(2);
+.title > h1 {
+    margin-bottom: 0;
 }
-.slide:last-of-type {
-    background: linear-gradient(135deg, #404040 0%, #202020 100%);
+.title > h3 {
+    margin-top: 0;
+    font-style: italic;
+}
+
+p {
+    font-size: 140%;
+    line-height: 150%;
+    color: #e0e0e0;
+}
+a {
+    color: #05132a;
+    font-weight: bold;
+}
+a:hover {
+    color: #203d6c;
 }
 
 #githubIcon {
-    margin: 0px 30px;
+    margin: 0 30px;
 }
 #mailIcon {
-    margin: 0px 30px;
+    margin: 0 30px;
 }
