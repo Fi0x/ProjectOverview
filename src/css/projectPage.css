@@ -67,18 +67,23 @@ body::-webkit-scrollbar {
     transform: translateX(-100%) translateY(-110%);
     padding: 4px;
     border-radius: 5px;
-    background: #ffffffbb;
+    background: #888888bb;
     box-shadow: 0 0 8px #000000AA;
 }
 .projectImg:last-of-type {
     transform: translateX(-100%) translateY(10%);
 }
+.brightImg {
+    opacity: 80%;
+}
 
 h1 {
     font-size: 250%;
+    color: #e0e0e0;
 }
 .title > h1 {
     margin-bottom: 0;
+    color: #000000;
 }
 .title > h3 {
     margin-top: 0;
@@ -95,7 +100,10 @@ a {
     font-weight: bold;
 }
 a:hover {
-    color: #203d6c;
+    color: #000000;
+}
+.hiddenLink {
+    text-decoration: none;
 }
 
 #githubIcon {
