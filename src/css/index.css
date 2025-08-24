@@ -1,22 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 
-html {
-    height: 100%;
-    overflow: hidden;
-}
+
 body {
-    margin: 0;
-    padding: 0;
-    perspective: 1px;
-    transform-style: preserve-3d;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    font-family: Nunito, serif;
-    scroll-snap-type: both proximity;
-    scroll-behavior: smooth;
     background: linear-gradient(135deg, #202020 0%, #000000 100%);
     color: #adadad;
     text-align: center;
@@ -39,7 +24,7 @@ body::-webkit-scrollbar {
     background-size: auto;
 }
 #sailingSelect {
-    background-image: url('../images/sailing/zweimaster.jpg');
+    background-image: url('../images/sailing/overviewLogo.jpg');
     background-size: cover;
 }
 .blurring {
