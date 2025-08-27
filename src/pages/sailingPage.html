@@ -20,7 +20,7 @@
             <h3>2014 - now</h3>
             <p>During summer holidays and on weekends. A lot of beginner courses for children 6-14 years old.
                 Also many courses for adults, like beginner-training and trainings for the license exams.</p>
-            <p>Ships: Scholtz 22, Bavaria 33 - Bavaria 46, Optimist, Laser</p>
+            <p>Ships: Scholtz 22, Bavaria 33 - Bavaria 46, Optimist</p>
             <p>Sailed distance: ~300nm/year</p>
         </div>
         <img class="projectImg" src="../images/sailing/scholtz1.jpeg" alt="Butterfly on a Scholtz 22">
@@ -46,7 +46,7 @@
         <img class="projectImg" src="../images/sailing/esseAmWind.jpg" alt="Esse 850">
         <img class="projectImg" src="../images/sailing/esseGenniSonnenuntergang.jpg" alt="Esse 850">
         <img class="projectImg" src="../images/sailing/esseRundUmSonnenuntergang.jpg" alt="Esse 850">
-<!--        TODO: Add more racing images-->
+        <!--        TODO: Add more racing images-->
     </div>
 
     <div class="slide contentSlide">
@@ -109,9 +109,19 @@
             <p>Name: Felix Pechtl</p>
             <p>Fluent Languages: English, German</p>
             <p>Certificates: SKS, SRC, SBF-See, SBF-Binnen, Bodenseeschifferpatent A+D</p>
-            <p>Sailed distance: Inland-Waters ~ 10.000nm, Salt-Water ~ 1.300nm</p>
+            <p>Sailed distance: Inland-Waters ~ 5.000nm, Salt-Water ~ 1.300nm</p>
         </div>
     </div>
 </div>
+<script>
+    let slides = document.getElementsByClassName("contentSlide");
+    for (let slide of slides) {
+        let images = slide.getElementsByTagName("img");
+        while (images.length > 2) {
+            let nextImg = images.item(Math.random() * images.length);
+            nextImg.remove();
+        }
+    }
+</script>
 </body>
 </html>
