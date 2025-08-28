@@ -12,10 +12,10 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     -ms-overflow-style: none;
-    scrollbar-width: none;
     font-family: Nunito, serif;
     scroll-snap-type: both proximity;
     scroll-behavior: smooth;
+    scrollbar-color: #575757 transparent;
 }
 
 .slide {

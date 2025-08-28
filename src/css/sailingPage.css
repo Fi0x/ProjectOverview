@@ -4,9 +4,6 @@
 body {
     background: #000000;
 }
-body::-webkit-scrollbar {
-    display: none;
-}
 
 .slide:first-of-type {
     background: linear-gradient(135deg, #1c246e 0%, #040c28 100%);
