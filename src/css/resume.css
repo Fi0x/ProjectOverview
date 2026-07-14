@@ -1,0 +1,10 @@
+body {
+    background: linear-gradient(135deg, #0f1c3f 0%, #010411 100%);
+}
+.markdown-body h1 {
+    color: white;
+}
+
+#sailing-resume {
+    color: white;
+}

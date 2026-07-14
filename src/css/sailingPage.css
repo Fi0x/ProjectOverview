@@ -47,3 +47,10 @@ a:hover {
 #mailIcon {
     margin: 0 30px;
 }
+
+.bright-link {
+    color: #95f4ff;
+}
+.bright-link:hover {
+    color: #00a2b3;
+}
