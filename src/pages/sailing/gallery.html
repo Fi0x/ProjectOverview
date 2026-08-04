@@ -11,27 +11,24 @@
 <div id="gallery">
     <h1>Gallery</h1>
     <!--TODO: Fix arrows and image sizes-->
-    
+
     <!-- Slideshow container -->
-    <div class="slideshow-container">
+    <div id="slideshow-container" class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
             <img src="../../images/sailing/scholtz2.jpg" style="width:100%">
-            <div class="text">Caption Text</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
             <img src="../../images/sailing/scholtz1.jpeg" style="width:100%">
-            <div class="text">Caption Two</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
             <img src="../../images/sailing/pogo1250.jpg" style="width:100%">
-            <div class="text">Caption Three</div>
         </div>
 
         <!-- Next and previous buttons -->
@@ -40,8 +37,10 @@
     </div>
 </div>
 <script>
-    //TODO: Auto-load all pictures of the folder instead of manually adding them
     let slideIndex = 1;
+    let slides;
+
+    loadImages();
     showSlides(slideIndex);
 
     // Next/previous controls
@@ -49,15 +48,8 @@
         showSlides(slideIndex += n);
     }
 
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
     function showSlides(n) {
         let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
         if (n > slides.length) {
             slideIndex = 1
         }
@@ -67,11 +59,35 @@
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
         slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
+    }
+
+    function loadImages() {
+        let slideshowContainer = document.getElementById("slideshow-container");
+        let images;//TODO: Load all images filenames in sailing folder
+
+        for (let sailingImage in images) {
+            addImage(slideshowContainer, sailingImage);
+        }
+
+        slides = document.getElementsByClassName("mySlides");
+    }
+
+    function addImage(slideshowContainer, imageFile, totalImages, index) {
+        let div = document.createElement("div");
+        div.classList.add("mySlides", "fade");
+
+        let countDiv = document.createElement("div");
+        countDiv.classList.add("numbertext");
+        countDiv.innerText = "" + index + " / " + totalImages;
+        div.appendChild(countDiv);
+
+        let img = document.createElement("img");
+        img.src = imageFile;
+        img.classList.add("galleryImg")
+        div.appendChild(img);
+
+        slideshowContainer.appendChild(div);
     }
 </script>
 </body>
