@@ -5,22 +5,53 @@ const images = [
     "../../images/sailing/adria04.jpg",
     "../../images/sailing/adria05.jpg",
     "../../images/sailing/diamant2000.jpg",
+    "../../images/sailing/diamant2000eiserne.jpg",
+    "../../images/sailing/diamant2000GennakerBug.jpg",
     "../../images/sailing/enigmaSonnenuntergang.jpg",
     "../../images/sailing/esse2Hand.jpg",
+    "../../images/sailing/esseAchteraus.jpg",
     "../../images/sailing/esseAmWind.jpg",
+    "../../images/sailing/esseAmWindAufKante.jpg",
+    "../../images/sailing/esseFinalRace2025.jpg",
     "../../images/sailing/esseGenniSonnenuntergang.jpg",
+    "../../images/sailing/esseRundUmAussen.jpg",
     "../../images/sailing/esseRundUmSonnenuntergang.jpg",
+    "../../images/sailing/jolleGennaker.jpg",
+    "../../images/sailing/kroatienOceanis3.jpg",
+    "../../images/sailing/mittwochsregattaLuvTonne.jpg",
     "../../images/sailing/overviewLogo.jpg",
     "../../images/sailing/pogo44.jpg",
     "../../images/sailing/pogo1250.jpg",
+    "../../images/sailing/pogo1250Aussen.jpg",
+    "../../images/sailing/regattafeldGennaker2.jpg",
     "../../images/sailing/scholtz1.jpeg",
     "../../images/sailing/scholtz2.jpg",
+    "../../images/sailing/scholzAmWind.jpg",
     "../../images/sailing/sksDehler01.jpg",
     "../../images/sailing/sksDehler02.jpg",
     "../../images/sailing/x99Spi.jpeg"
 ];
 
+const imageSeed = 0.2340987;
+
+function shuffleImages() {
+    let currentIndex = images.length;
+
+    // While there remain elements to shuffle...
+    while (currentIndex !== 0) {
+
+        // Pick a remaining element...
+        let randomIndex = Math.floor(getRand() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [images[currentIndex], images[randomIndex]] = [images[randomIndex], images[currentIndex]];
+    }
+}
+
 function loadImages() {
+    shuffleImages();
+
     let slideshowContainer = document.getElementById("slideshow-container");
 
     images.forEach(function (image, idx) {
@@ -46,3 +77,14 @@ function addImage(slideshowContainer, imageFile, totalImages, index) {
 
     slideshowContainer.appendChild(div);
 }
+
+function mulberry32(a) {
+    return function() {
+        let t = a += 0x6D2B79F5;
+        t = Math.imul(t ^ t >>> 15, t | 1);
+        t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+}
+
+const getRand = mulberry32((imageSeed*2**32)>>>0)
